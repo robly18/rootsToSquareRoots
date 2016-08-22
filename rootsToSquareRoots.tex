@@ -1,0 +1,407 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{axiom}{Axiom}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{plain}
+\newtheorem*{fact}{Fact}
+
+\newtheorem{lemma}{Lemma}
+
+\title{From the roots to square roots: an introduction to ``real'' math}
+
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+	\maketitle
+	
+	\section{Introduction}
+	
+	Every single one of us has had, at some point in their lives, to endure school math. Everyone has had to withstand the endless calculations and memorize the countless rules regarding when you can cross out the numerator and denominator, or how to solve $f(x)>0$ for $x$.
+	
+	But here's the thing: that's not real math. Or, at least, it's not what mathematicians do. Mathematicians' job is not to make up a bunch of arbitrary rules for poor teenage students to memorize. No, their job is to create. To create systems and models, some of which might be useful to us as a society, some may not.
+	
+	Problem is, most people do not get a chance to be exposed to this facet of math. They're led to believe mathematics is about doing calculations and solving for $x$.
+	
+	And so, this text has been written in order to give whomever might be reading this a taste of "real" math. A hint of what mathematicians do.
+	
+	You don't need to be a genius to understand this. You don't need to fit many criteria, other than the ability to think clearly. This is targeted mainly at high school students, but anyone who wishes to have a taste of what math is kind of like at a deeper level is free to read.
+	
+	And so, without further ado, here is math.
+	
+	\section{What is a number?}
+	
+	Before we begin, as a kind of thought experiment, imagine the following:
+	
+	You have just been kidnapped by a strange alien race. They are nothing like us humans: they are completely different, they perceive things differently, they understand things differently. These aliens have been watching us humans for a while now, but they have one nagging question. What is this whole ``number'' thing we humans often talk about?
+	
+	They have selected \emph{you} to answer this one question:
+	
+	\begin{center}
+		{\Large What is a number?}
+	\end{center}
+	
+	Go ahead. Think of how you would answer this. For simplicity's sake, you can assume we mean only the natural numbers (i.e. 1,2,3, and so on).
+	
+	So, how would you explain to these kind, strange aliens what a number \emph{is}? No, really, think about it. I can wait.
+	
+	\smallskip
+	
+	You might start by pointing at one object and saying `one', and then at two objects and saying `two', but the aliens just won't get it. They have no idea what a `three' is going to be, for example. And besides, what is that weird $+$ sign you put between numbers? And what makes a two ``less than'' a five?
+	
+	You're not going to get anywhere this way. You'll need a different approach.
+	
+	In this text, we are going to define what a number is. We are going to show that they follow some set of rules, and we will provide an answer to the ubiquitous question: ``Why is $1+1=2$?''. That's right: we're going to do math.
+	
+	\section {Ready, Sets, Go!}
+	
+	Before we start, however, there are some things we should get straight. Namely, the notion of a set.
+	
+	The notion of a set is very important in mathematics. A set is, to paraphrase Georg Cantor, the founder of set theory:
+	
+	\begin{definition}
+		A set is a family of distinct objects. Such objects are called the \emph{elements of the set}, and a set is an object of its own right.
+	\end{definition}
+	
+	In simpler terms, a set is a collection of things. Here are some examples:
+	
+	\begin{itemize}
+		\item The set that only contains the elements $1$, $5$ and $73$ would be denoted as $\{1, 5, 73\}$.
+		\item The set that contains the object $o$ and nothing else would be denoted $\{o\}$
+		\item The set that contains absolutely nothing could be denoted $\{\}$, or, most commonly, $\emptyset$. This one is called the \emph{empty set}.
+	\end{itemize}
+	
+	Sets can also contain other sets, such as the following:
+	
+	\[\{1, 2, \{3, 4, 5\}, 6\}\]
+	
+	Which is distinct from $\{1,2,3,4,5,6\}$. The latter contains the numbers 1 to 6, while the former only contains the numbers 1, 2 and 6, as well as the set $\{3,4,5\}$.
+	
+	Take some time to get acquainted with the notion of a set. It is really important that you are aware of how they work, as they come up very, very often in math!
+	
+	Another thing worthy of note is that, in sets, neither number nor order matters. The set $\{1,2\}$ is the same as $\{2,1\}$, which are both equivalent to $\{1,2,1,1,2\}$. An element is either in a set, or it is not, and it is meaningless to ask if it is the ``first object'' of the set, or if it appears four or five times. All that matters is if an object is in a set or not.
+	
+	It is often helpful to give sets a name, and such names are more often than not capital letters. For example, consider the set $A$, consisting of all the letters in the alphabet:
+	
+	\[A = \{a,b,c, \ldots ,x,y,z\}\]
+	
+	Now, instead of referring to it as ``the set of all letters in the alphabet'', we can just say ``the set $A$''
+
+	\smallskip
+	
+	Some other very useful notions:
+	
+	\begin{itemize}
+		\item Given an object $x$ and a set $X$, saying ``$X$ contains $x$'', or, equivalently, ``$x$ is in $X$'', can be denoted $x \in X$.
+		
+		\item Similarly, given two sets $A$ and $B$, we say $A$ is a subset of $B$, denoted $A \subseteq B$, if every item in $A$ is also in $B$.
+		
+		\item If $A$ and $B$ are sets, their union, denoted $A \cup B$, is the set of all items that are either in $A$ or in $B$.
+		
+		\item Similarly, the intersection of two sets, denoted $A \cap B$ is the set of all items that are in both $A$ and $B$.
+		
+		\item Finally, the set difference of $A$ and $B$ is the set of all elements that belong to $A$, but not to $B$. It is denoted $A \setminus B$.
+	\end{itemize}
+	
+	For example, consider $A = \{a, b, c, d\}$, $B = \{b,d\}$ and $C = \{c, e\}$.
+	
+	\begin{itemize}
+	
+	\item Then it is valid to say $b \in A$ and $b \in B$, but \emph{not} $b \in C$ (so we say $b \not\in C$).
+	
+	\item $B$ is a subset of $A$, but not of $C$.
+	
+	\item $A \cup C = \{a,b,c,d,e\}$
+	
+	\item $A \cap C = \{c\}$
+	
+	\item $A \setminus B = \{a,c\}$ and $A \setminus C = \{a,b,d\}$
+	
+	\item Finally, $B \cap C = \emptyset$, that is, there are no items that are both in $B$ and $C$. Thus, we say $B$ and $C$ are \emph{disjoint}.
+	
+	\end{itemize}
+	
+	Again, sets will come up time and time again, so make sure you understand them well. With that said, we can finally go on to answer our original question: \emph{What is a number?}
+	
+	\section{Starting from zero}
+	
+	So, before we define numbers, let's set ourselves a goal. What kind of number do we want to define? For our purposes, let's attempt to define the natural numbers. They seem to be the most ``obvious'' to begin with: after all, if we have to start somewhere, we'd best start at one, two, three!
+	
+	One slight note, however: our definition will actually be of $\N_0$ rather than $\N$. In other words: we will not only define what 1, 2, 3 and so on are, but we will also include 0 in our considerations. For the purposes of this work, the name ``Natural Number'' will be given to any member of $\N_0$, and such a set will be the ``Set of Naturals''. Sometimes we will omit the word `natural', and just say ``number'' when we really mean ``natural number''.
+	
+	That said, how would we go about doing this? Well, in math, you often start with what is called \emph{axioms} or, less commonly, \emph{postulates}. An axiom is a basic rule, which is not ``proven''. It is a fact which is just taken as true. In a sense, it is a definition. An example of an axiom might be ``Two lines intersect at a point''. It is something that intuitively is (or should be) very obvious, but has no real foundation other than intuition. Axioms are the building blocks of math.
+	
+	After we decide which axioms to start with, that is, once we find a few rules such that we are content in saying ``a natural number is something that has these properties'', we can go on to start from those rules to figure out other properties. If we find important properties that will probably be helpful later, we call them \emph{theorems}; if it is a less remarkable property, but that will be useful in the near future, it often gets the name of \emph{lemma}.
+	
+	With that out of the way, here are the axioms commonly taken as those that define $\N_0$. They are called the \emph{Peano Axioms} in honor of Giuseppe Peano, the mathematician who came up with them in the late 1800's.
+	
+	\begin{definition}
+		The set $\N_0$ is the set that obeys the following four properties:
+		\begin{enumerate}
+			\item $0$ is a natural number, that is, $0 \in \N_0$;
+			\item Each natural number has one, and only one, unique successor, which is also a natural number (the successor of a natural $n$ is denoted $s(n)$);
+			\item No number has $0$ as their successor, that is: there is no $n \in \N_0$ such that $s(n) = 0$;
+			\item If $X$ is a set such that $0 \in X$ and, for every natural number $n$, $n \in X$ implies $s(n) \in X$, then $\N_0$ is a subset of $X$ (Axiom of induction).
+		\end{enumerate}
+	\end{definition}
+	
+	Right. That might have been a bit heavy, so let's go through all the axioms one by one. There will be intuitive explanation of each, but be aware that, while intuition has its place in mathematics, our conclusions will be based only on the axioms themselves, not from what is ``obvious'' from them. This will be noticeable in some of the theorems that we will prove, which at first glance seem to be completely trivial, but prove to actually be mildly difficult to prove. An example of this is ``There is no natural number between $n$ and its successor'': intuitively obvious, but we have not proved that yet. We'll get there.
+	
+	\begin{axiom}
+		0 is a natural number. That is, $0 \in \N_0$.
+	\end{axiom}
+	
+	This one shouldn't be too hard to understand. It is necessary because, if not for it, the empty set ($\emptyset$) would fit all the other requirements. We're basically saying ``there is at least one natural number'' and naming it.
+	
+	\begin{axiom}
+		Each natural number has one, and only one, unique successor, which is also a natural number.
+	\end{axiom}
+	
+	Basically, what we are saying, is that every number has a number that comes ``after'' it, in a sense. For instance, we denote the successor of 0, $s(0)$, as $1$. And $s(1)$, or $s(s(0))$ as $2$. And $s(s(s(0)))$ is $3$, and so on. You get the point. Note that, while they were used here to appeal to intuition, the symbols $1$, $2$, $3$ and et cetera have not yet been properly defined. But you can just mentally replace each of these symbols by the ``obvious'' definition. For instance, $5$ would be $s(s(s(s(s(0)))))$.
+	
+	For those who might understand it, here is an alternate formulation of this axiom:
+	
+	There is an injective function $s : \N_0 \to \N_0$, where $s(n)$ is called the successor of $n$.
+	
+	It is not necessary to get this last paragraph as long as you understand what the axiom is \emph{saying}: this was just for those who might find it elucidating.
+	
+	\begin{axiom}
+		There is no $n \in \N_0$ such that $s(n) = 0$.
+	\end{axiom}
+	
+	Again, the meaning should be fairly obvious. No number ``precedes'' zero. In an intuitive sense, it is the ``first'' natural.
+	
+	\begin{axiom}
+		If $X$ is a set such that $0 \in X$ and, for all natural numbers, $n \in X$ implies $s(n) \in X$, then $\N_0 \subseteq X$ (Axiom of induction).
+	\end{axiom}
+	
+	This one is possibly the hardest one to understand, but, despite the scary looking formulation, it is, like the others, fairly intuitive.
+	
+	Consider a set $X$ where you manage to prove that $0 \in X$ and that, if some natural $n$ belongs to $X$, so does its successor.
+	
+	Well, if $0 \in X$, so does its successor, 1. And if $1 \in X$, then so shall 2. And with that, so will 3, 4, and so on. Thus, \emph{all} natural numbers will belong to $X$, which is saying that $\N_0$ is a subset of $X$.
+	
+	So, in conclusion, if you want to prove that a certain proposition is true for all natural numbers (or, equivalently, that the set of naturals for which it applies is equal to $\N_0$), all you need to do is prove that it applies to 0, and that if it applies to a number then it does for its successor as well.
+	
+	As an example, let's prove a simple, yet useful fact: our first theorem.
+	
+	\begin{theorem}
+		Every natural number is either 0, or the successor of some natural number.
+	\end{theorem}
+	
+	\begin{proof}
+		Let $X$ be the set of numbers such that the theorem applies. Clearly, $0 \in X$, because 0 is 0.
+		
+		Now, let's say that some natural $n$ is in $X$. Then, $s(n)$ is the successor of a natural number ($n$), and, as such, also belongs to $X$.
+		
+		Thus, every natural number belongs to $X$ by the axiom of induction, and as such, the theorem is true for all $n \in \N_0$.
+	\end{proof}
+	
+	\section{One plus one}
+	
+	So, now that we have a definition of a number, what can we do with it? Can we add numbers?
+	
+	Well... Not really. Not yet at least. The $+$ sign as we know it isn't well defined yet: we have not yet explained what it means.
+	
+	So... What is addition? Simply put, the $+$ sign is an operator. It takes two numbers, and turns them into a third number. Intuitively speaking, in the expression $1+2$ the $+$ operator is taking the numbers 1 and 2 and turning them into 3.
+	
+	How does it do that?
+	
+	\begin{definition}
+		The $+$ operator is defined as such:
+		
+		\begin{enumerate}
+			\item $n + 0 = n$ for all $n \in \N_0$.
+			\item $n + s(m) = s(n) + m$ for all $n \in \N_0$.
+		\end{enumerate}
+	\end{definition}
+	
+	That's it. It is now valid to say $1+1=2$. In fact, as promised, here is the proof:
+	
+	\begin{fact}
+		$1+1=2$
+	\end{fact}
+	
+	\begin{proof}
+		\begin{align*}
+			1 + 1 &= s(0) + s(0) \\
+				  &\overset{(1)}{=} s(s(0)) + 0 \\
+				  &\overset{(2)}{=} s(s(0)) \\
+				  &= 2
+		\end{align*}
+		
+		(1) By part 2 of definition of $+$
+		
+		(2) By part 1 of definition of $+$
+	\end{proof}
+	
+	Not too shabby, huh? We now know how to add.
+	
+	From that simple definition, we can go on to prove other things; very simple properties of addition, that we usually take for granted.
+	
+	Here are a few of the most important ones:
+	
+	\begin{theorem}
+		Zero is the neutral element of addition. Also, addition obeys the laws of commutativity and associativity. In other terms (where $n,m$ and $k$ are arbitrary naturals):
+		\begin{enumerate}[i.]
+			\item $0 + n = n = n + 0$
+			\item $n + m = m + n$
+			\item $k + (n + m) = (k + n) + m$
+		\end{enumerate}
+	\end{theorem}
+	
+	Before we prove them, however, a small lemma which will help us soon:
+	
+	\begin{lemma}
+		$n+s(m) = s(n+m)$
+	\end{lemma}
+	
+	In the following proof, we'll omit the ``set $X$'' we have constructing in proofs so far, and just take it as granted that, if we prove that something is true for 0, and that, if it is true for $n$, then it also is for $s(n)$, then it is proven for all naturals. This is called a proof by induction.
+	
+	\begin{proof}
+		Let's use induction on $m$: that is, prove the lemma applies for $m=0$ and then prove the induction step.
+		
+		Clearly, $n+s(0) = s(n) + 0 = s(n) = s(n+0)$, which proves the case $m=0$.
+		
+		But let's say that $n+s(m)=s(n+m)$ for some m. Then, $n+s(s(m)) = s(n) + s(m)$ by definition of addition, which is in turn equal to $s(s(n)+m)$ by hypothesis. In turn, this equals $s(n + s(m))$ by definition of addition again, and thus $n + s(s(m)) = s(n+s(m))$.
+		
+		With the induction step proven, we finish our proof.
+	\end{proof}
+	
+	Now that we have proven the lemma, we can go on to prove the theorem:
+	
+	\begin{proof}
+		\begin{enumerate}[i.]
+			\item First of all, note that $0 + n = n$ for any $n$, as, by induction:
+			
+			$0 + 0 = 0$ by definition.
+			
+			If $0 + n = n$, then $0 + s(n) = s(0 + n)$ as per our lemma. But this is, in turn, equal to $s(n)$ by hypothesis.
+			
+			Since $n = n + 0$ by definition, the double equality $0 + n = n = n + 0$ is proven.
+			
+			\item We have already proven that $0 + n = n + 0$.
+			
+			Now, let's say $m + n = n + m$ for some fixed $m$. Then, by definition of addition, our lemma and our hypothesis:
+			\begin{align*}
+			s(m) + n &= m + s(n) \\
+					 &= s(m + n) \\
+			         &= s(n + m) \\
+			         &= n + s(m)
+			\end{align*}
+			
+			This proves that the statement holds for all natural $m$.
+			
+			\item Clearly, $k + (n + 0) = k + n = (k + n) + 0$
+			
+			Now, say $k+(n+m)=(k+n)+m$ is true for some fixed $m$. Then:
+			\begin{align*}
+				k + (n + s(m)) &= k + s(n + m) \\
+							   &= s(k + (n + m)) \\
+							   &= s((k + n) + m) \\
+							   &= (k + n) + s(m)
+			\end{align*}
+			
+			Thus, it holds for all natural $n$, and our proof is complete.
+			
+			
+		\end{enumerate}
+	\end{proof}
+	
+	This third part of the theorem means we can unambiguously assign a value to $a + b + c$, as both ways to interpret it ($a + (b+c)$ or $(a+b) + c$) turn out to have the same value.
+	
+	Now that we know how to add numbers, we can attempt to move on to multiplication.
+	
+	\section{Times and times again}
+	
+	As kids, we were often taught that ``multiplication is repeated addition''. Now, that is \emph{generally} a very, very bad notion. After all, how do you add a number to itself $\sqrt{2}$ times, for example?
+	
+	However, this way of thinking turns out to be a rather good way of defining multiplication \emph{for naturals}. That is, here is how we will define it:
+	
+	\begin{definition}
+		The operator $\times$ is defined as:
+		
+		\begin{enumerate}
+			\item $n \times 0 = 0$
+			\item $n \times s(m) = n + (n \times m)$
+		\end{enumerate}
+		
+		Where $n$ and $m$ are arbitrary naturals.
+	\end{definition}
+	
+	As you might see, what we defined now is basically repeated addition. For instance, consider we are doing $3 \times 2$. Here is how it would develop:
+	
+	\begin{align*}
+		3 \times 2 &= 3 \times s(s(0)) \\
+				   &= 3 + (3 \times s(0)) \\
+				   &= 3 + (3 + (3 \times 0)) \\ 
+				   &= 3 + (3 + 0) \\
+				   &= 3 + 3
+	\end{align*}
+	
+	So, as you can see, $3 \times 2 = 3 + 3$, as expected. You might also notice that we didn't even use the fact that $3$ was, well, $3$. So you could actually replace it by a variable, and we will have just proven that $n \times 2 = n + n$ for all $n$. Pretty nifty, huh?
+	
+	As we did with addition, here are a few interesting properties of multiplication we take for granted.
+	
+	\begin{theorem}
+		Multiplication has 1 as neutral element, 0 as absorbing element, and obeys commutativity and associativity. Furthermore, multiplication distributes over addition.
+		
+		In other words, where $n$, $m$ and $k$ are arbitrary naturals:
+		
+		\begin{enumerate}[i.]
+			\item\label{one} $n \times 1 = n = 1 \times n$
+			\item\label{zero} $n \times 0 = 0 = 0 \times n$
+			\item\label{comm} $n \times m = m \times n$
+			\item\label{assoc} $n \times (m \times k) = (n \times m) \times k$
+			\item\label{dist} $k \times (n + m) = (k \times n) + (k \times m)$
+		\end{enumerate}
+	\end{theorem}
+	
+	A slight heads up: we won't prove those statements in this order. Rather, since some are easier to prove once other already have been, we will order them in a way that chains the proofs together more smoothly.
+	
+	\begin{proof}
+		\ref{zero}. It should be pretty clear that $n \times 0 = 0$; after all, it is in the definition.
+			
+		On the other hand, to prove $0 \times n = 0$ we will need induction.
+			
+		It is easy to see it true in the case $n = 0$, so let's start by assuming $0 \times n = 0$ for some given $n$. Well, then $0 \times s(n) = 0 + (0 \times n)$ by definition of multiplication, but this latter equals $0 + 0 = 0$. This proof is complete.
+		
+		~
+		
+		\ref{dist}. Let us now prove distributivity:
+		
+		$k \times (n + m) = (k \times n) + (k \times m)$
+		
+		To do this, we will do induction in $m$. It should be easy to see that this does apply for $m=0$, considering $n+0 = n$  and $k \times 0 = 0$ by what we have already proven.
+		
+		So now, we will assume that this property holds for all $k$ and $n$, and some given $m$. We will prove that it will too for $s(m)$.
+		
+		\begin{align*}
+		k \times (n + s(m)) &= k \times s(n + m) \\
+							&= k + (k \times (n + m)) \\
+							&= k + (k \times n) + (k \times m) \\
+							&= (k \times n) + [k + (k \times m)] \\
+							&= (k \times n) + (k \times s(m))
+		\end{align*}
+		
+		In the first line, we used a lemma we proved in the section on addition; in the second, the definition of multiplication; then our hypotheses, followed by commutativity of addition and definition of multiplication.
+		
+		This finishes the proof that $k \times (n+m) = (k \times n) + (k \times m)$.
+		
+	\end{proof}
+	
+	
+	
+\end{document}
